@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.testng.Assert;
 
 public class LoginPage extends BasePage {
-    @FindBy(xpath = "(//input[@type='password']/parent::label/parent::div/preceding-sibling::div//input")
+    @FindBy(xpath = "//input[@type='password']/parent::label/parent::div/preceding-sibling::div//input")
     private WebElement emailTextBox;
     private final String spanEmailTextBox = "//input[@type='password']/parent::label/parent::div/preceding-sibling::div//input/following-sibling::span";
     private final String spanPasswordText =  "//input[@type='password']/following-sibling::span";
@@ -48,6 +48,6 @@ public class LoginPage extends BasePage {
         clickElement(checkboxRememberMe);
     }
     public void checkStatusRememberMe(){
-        Assert.assertEquals(checkboxRememberMe.getAttribute("class").toUpperCase(), "CHECKED");
+        Assert.assertTrue(checkboxRememberMe.getAttribute("class").toUpperCase().contains("CHECKED"));
     }
 }

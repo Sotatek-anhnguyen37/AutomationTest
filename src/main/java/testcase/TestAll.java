@@ -8,15 +8,13 @@ import pages.LoginPage;
 
 public class TestAll extends BaseSetUp {
     @Test(description = "D.A")
-    public void loginAdmin() throws InterruptedException {
+    public void loginAdmin(){
         LoginPage loginPage = new LoginPage(getDriver());
         loginPage.navigateTo(Common.LINK_ADMIN);
         loginPage.checkPlaceHolderEmail();
         loginPage.checkPlaceHolderPassword();
         loginPage.checkPlaceHolderPassword();
-        loginPage.clickEmailTextBox();
         loginPage.sendKeyEmailTextBox("admin@phptravels.com");
-        loginPage.clickPasswordTextBox();
         loginPage.sendKeyPasswordTextBox("demoadmin");
         loginPage.clickRememeberMe();
         loginPage.checkStatusRememberMe();
